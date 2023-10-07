@@ -27,7 +27,7 @@ for (item of buttons) {
       isSign = true;
       screenValue += buttonText;
       screen.value = screenValue;
-    } else if (buttonText == "C") {
+    } else if (buttonText == "AC") {
       if (flag == 1) {
         flag = 0;
       }
@@ -42,13 +42,13 @@ for (item of buttons) {
       } else {
         screen.classList.remove("negative");
       }
-    } else if(buttonText=="(" || buttonText==")") {
-      if(flag==1){
-        flag =0;
+    } else if (buttonText == "(" || buttonText == ")") {
+      if (flag == 1) {
+        flag = 0;
       }
-      screenValue+=buttonText;
-      screen.value=screenValue;
-    } 
+      screenValue += buttonText;
+      screen.value = screenValue;
+    }
     else if (isNumber(buttonText)) {
       if (flag == 1) {
         screenValue = buttonText;
@@ -78,8 +78,7 @@ document.addEventListener("keydown", function (event) {
 });
 
 window.onerror = function () {
-  alert("PLEASE INPUT VALID EXPRESSION");
-  screenValue = "";
+  screenValue = "error";
   screen.value = screenValue;
   screen.classList.remove("negative"); // Remove negative class
   console.clear();
